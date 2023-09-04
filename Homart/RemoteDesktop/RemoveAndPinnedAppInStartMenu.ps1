@@ -17,7 +17,7 @@ foreach ($item in $items) {
 }
 
 # Define a function to pin or unpin an app to/from the Start Menu
-function Pin-App {
+function Add-AppToStartMenu {
     param(
         [string]$appname,
         [switch]$unpin
@@ -41,7 +41,7 @@ function Pin-App {
 $appNames = @("Word", "Excel", "Outlook", "Google Chrome", "SAP Business One Client (64-bit)", "File Explorer", "TIM", "WeChat", "Control Panel")
 # Pin each app in the array to the Start Menu
 foreach ($appName in $appNames) {
-    Pin-App $appName -pin
+    Add-AppToStartMenu $appName -pin
 }
 # Unpin TIM and WeChat from the Start Menu
 Pin-App "TIM" -unpin
